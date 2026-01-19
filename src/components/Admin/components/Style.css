@@ -1,0 +1,379 @@
+/* Full screen with background image */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center; /* vertical center */
+  justify-content: center; /* horizontal center */
+  background-color: rgba(248, 248, 248, 0.9);
+  padding: 20px;
+}
+
+/* Card styling */
+.login-card {
+  background: rgba(255, 255, 255, 0.9); /* translucent white */
+  max-width: 400px;
+  width: 100%;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  /* padding: 50px 10px 10px 50px; */
+}
+
+.login-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.label {
+  font-size: 13px;
+  color: #8f8f8f;
+  margin-bottom: 2.6px;
+}
+
+/*-----------------
+	6. Sidebar
+-----------------------*/
+
+.sidebar {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.138);
+  top: 90px;
+  width: 230px;
+  z-index: 1039;
+  background-color: rgb(255, 255, 255);
+  bottom: 0;
+  margin-top: 0px;
+  position: fixed;
+  left: 0;
+  transition: all 0.2s ease-in-out;
+}
+.sidebar.opened {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.sidebar-inner {
+  height: 100%;
+  transition: all 0.2s ease-in-out 0s;
+}
+.sidebar-menu ul {
+  font-size: 14px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.sidebar-menu li a {
+  color: #888;
+  display: block;
+  font-size: 15px;
+  height: auto;
+  padding: 0 20px;
+}
+.sidebar-menu li a:hover {
+  color: #009efb;
+}
+.sidebar-menu li.active a {
+  color: #009efb;
+  background-color: #f3f3f3;
+}
+.menu-title {
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 20px;
+}
+.menu-title > i {
+  float: right;
+  line-height: 40px;
+}
+
+.fixed-sidebar-right {
+  position: fixed;
+  top: 60px;
+  right: 0;
+  width: 300px;
+  margin-right: -300px;
+  bottom: 0;
+  z-index: 101;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.sidebar .sidebar-menu > ul > li > a span {
+  transition: all 0.2s ease-in-out 0s;
+  display: inline-block;
+  margin-left: 10px;
+  white-space: nowrap;
+}
+.sidebar .sidebar-menu > ul > li > a span.badge {
+  color: #fff;
+  margin-left: auto;
+}
+.sidebar-menu ul ul a {
+  display: block;
+  font-size: 14px;
+  padding: 9px 10px 9px 50px;
+  position: relative;
+}
+.sidebar-menu ul ul {
+  background-color: #f3f3f3;
+  display: none;
+}
+.sidebar-menu ul ul ul a {
+  padding-left: 70px;
+}
+.sidebar-menu ul ul ul ul a {
+  padding-left: 90px;
+}
+.sidebar-menu > ul > li {
+  position: relative;
+}
+.sidebar-menu .menu-arrow {
+  -webkit-transition: -webkit-transform 0.15s;
+  -o-transition: -o-transform 0.15s;
+  transition: transform 0.15s;
+  position: absolute;
+  right: 15px;
+  display: inline-block;
+  font-family: "FontAwesome";
+  text-rendering: auto;
+  line-height: 40px;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+  line-height: 18px;
+  top: 15px;
+}
+.sidebar-menu .menu-arrow:before {
+  content: "\f105";
+}
+.sidebar-menu li a.subdrop .menu-arrow {
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.sidebar-menu ul ul a .menu-arrow {
+  top: 6px;
+}
+.sidebar-menu a {
+  transition: unset;
+  -moz-transition: unset;
+  -o-transition: unset;
+  -ms-transition: unset;
+  -webkit-transition: unset;
+}
+.sidebar-menu > ul > li > a {
+  padding: 12px 20px;
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  transition: all 0.2s ease-in-out 0s;
+}
+.sidebar-menu ul li a i {
+  align-items: center;
+  display: inline-flex;
+  font-size: 18px;
+  min-height: 24px;
+  line-height: 18px;
+  width: 20px;
+  transition: all 0.2s ease-in-out 0s;
+}
+.sidebar-menu ul li.menu-title a i {
+  font-size: 16px;
+  margin-right: 0;
+  text-align: right;
+  width: auto;
+}
+
+/*-----------------
+	7. Content
+-----------------------*/
+
+.page-wrapper {
+  left: 0;
+  margin-left: 230px;
+  padding-top: 50px;
+  position: relative;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  background-color: #f1f1f1d0;
+  height: 100vh;
+}
+.page-wrapper > .content {
+  padding: 30px;
+  margin-top: 5vh;
+}
+
+/*-----------------
+	10. Activity
+-----------------------*/
+
+.activity-box {
+  position: relative;
+}
+.activity-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.activity .activity-list > li .activity-user {
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 12px;
+  left: 8px;
+  width: 32px;
+}
+.activity .activity-list > li .activity-content {
+  background-color: #fff;
+  margin: 0 0 0 40px;
+  padding: 0;
+  position: relative;
+}
+.activity-list > li {
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 10px;
+  position: relative;
+  border: 1px solid #e7e7e7;
+}
+.activity-list > li:last-child .activity-content {
+  margin-bottom: 0;
+}
+.activity-user .avatar {
+  height: 32px;
+  line-height: 32px;
+  margin: 0;
+  width: 32px;
+}
+.activity-list > li .activity-user {
+  background: #fff;
+  height: 32px;
+  left: -7px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 3px;
+  width: 32px;
+}
+.activity-list > li .activity-content {
+  background-color: #fff;
+  margin: 0 0 20px 40px;
+  padding: 0;
+  position: relative;
+}
+.activity-list > li .activity-content .timeline-content {
+  color: #9e9e9e;
+}
+.activity-list > li .activity-content .timeline-content a.name {
+  color: #000;
+}
+.activity-list > li .time {
+  color: #bdbdbd;
+  display: block;
+  font-size: 12px;
+  line-height: 1.35;
+}
+.activity .timeline-content > a {
+  color: #009efb;
+}
+.activity-delete {
+  background-color: #ffe5e6;
+  border: 1px solid #fe0000;
+  color: #fe0000;
+  display: none;
+  font-size: 20px;
+  height: 20px;
+  line-height: 18px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 20px;
+}
+.activity-delete:hover {
+  background-color: #fe0000;
+  color: #fff;
+}
+.activity-list > li:hover .activity-delete {
+  display: inline-block;
+}
+
+/*-----------------
+	42. Responsive
+-----------------------*/
+
+@media only screen and (max-width: 991.98px) {
+  .page-title-box {
+    display: none;
+  }
+  .sidebar {
+    margin-left: -225px;
+    width: 225px;
+  }
+  .page-wrapper {
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .slide-nav .sidebar {
+    margin-left: 0;
+  }
+
+  .slide-nav .page-wrapper {
+    left: 225px;
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  h3 {
+    font-size: 1.17em;
+  }
+  h4 {
+    font-size: 1.12em;
+  }
+  h5 {
+    font-size: 0.83em;
+  }
+  h6 {
+    font-size: 0.75em;
+  }
+  .page-title {
+    font-size: 1.2em;
+    padding-top: 10px;
+  }
+}
+@media only screen and (max-width: 575.98px) {
+  .page-wrapper > .content {
+    padding: 15px;
+  }
+
+  .page-title {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .compose-btn button {
+    padding: 0.365rem 0.5rem;
+  }
+  .attachments li {
+    float: none;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+}
